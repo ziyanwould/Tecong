@@ -5,8 +5,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>输入车牌号</title>
-    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <link rel="stylesheet" href="https://res.wx.qq.com/open/libs/weui/1.1.2/weui.min.css">
+    <link rel="stylesheet" href="https:at.alicdn.com/t/font_975764_3r2oc75uoi.css">
+    <!-- <link rel="stylesheet" type="text/css" href="css/base.css" /> -->
     <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" href="css/login.css">
     <!-- <link rel="stylesheet" href="mui/css/mui1.css"> -->
 
 </head>
@@ -14,13 +17,57 @@
 <body>
     <div id="container">
         <div id="carLicenseBox">
-            <div class="carLicenseTitle">
+            <!-- <div class="carLicenseTitle">
                 请核对车牌号
+            </div> -->
+            <div class="nav">
+                首次使用需要绑定手机号
             </div>
-            <div class="car">请输入车牌号</div>
+            <div class="input">
+                <form action="">
+                    <div class="child ">
+                        <div class="left">
+                           <i class="iconfont  icon-tongxinlu"></i>
+                        </div>
+                        <div class="right">
+                            <input class="weui-input ipone" type="text" placeholder="请输入你的姓名">
+                        </div>
+                    </div>
+                    <div class="child sex">
+                        <div class="left">
+                            <i class="iconfont  icon-xingbie"></i>
+                        </div>
+                        <div class="right">
+                           
+                          
+                            <div class="weui-cell__bd client-type">
+                                <span class="person" >
+                                    <a href="javascript:;" class="weui-icon-circle selected " data-type="1"></a>
+                                    <span class="user-type">男</span>
+                                </span>
+                                <span class="company">
+                                <a href="javascript:;" class="weui-icon-circle" data-type="2"></a>
+                                <span class="user-type">女</span>
+                                </span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+            <div class="child che">
+                        <div class="left">
+                           <i class="iconfont  icon-che"></i>
+                        </div>
+                        <div class="right">
+                            请点击方框填写你的车牌
+                        </div>
+                    </div>
             <div class="carLicenseMain">
                 <ul>
-                    <li class="active">豫</li>
+                    <li class="active">粤</li>
                     <li></li>
                     <li></li>
                     <li></li>
@@ -30,15 +77,11 @@
                     <li class="xinnengyuan"></li>
                 </ul>
             </div>
-            <div class="refresh">
-                <a href="javascript:;">
-                    <img src="./imgs/shuaxin.png" id="img" alt="">
-                </a>
-                <span>车牌有误、点击刷新</span>
-            </div>
+          
             <div class="submitBtn" id="submitBtn">下一步</div>
         </div>
         <div id="keyboardBox">
+            <div class="closeBox"><a href="javascript:;">关闭</a></div>
             <div class="provienceBox" id="provienceBox">
                 <ul>
                     <li>京</li>
@@ -143,11 +186,32 @@
         </div>
     </div>
 </body>
-<script src="js/jquery-1.11.1.min.js"></script>
-<!-- <script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script> -->
-<script src="lib/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="cardNum/lib/layer/layer.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript" charset="utf-8">
     $(function () {
+        $('.closeBox a').click(function(e){　　
+                　　
+                $('#keyboardBox').hide();
+              
+        })
+        $('body').click(function(e){　
+
+            $('#keyboardBox').hide();
+        })
+  
+        $('.carLicenseMain li').click(function(event){
+            event.stopPropagation();
+            $('#keyboardBox').show();
+        })
+        $('#keyboardBox').click(function(){
+            event.stopPropagation();
+        })
+        $('.weui-icon-circle').click(function(){
+            $('.weui-icon-circle').removeClass("selected");
+            $(this).addClass("selected");
+        })
 
         var num = 6; //需要输入的车牌数
         //切换键盘
@@ -228,14 +292,14 @@
                         "active");
                     $('.carLicenseMain ul li.active').html('');
                     if (index == 0) {
-                        $('.carLicenseMain ul li.active').html('豫');
+                        $('.carLicenseMain ul li.active').html('粤');
                         $('#provienceBox').show();
                         $('#textBox').hide();
                     }
                 }
             } else if (index == 0) {
                 $('.carLicenseMain ul li.active').html(
-                    '豫');
+                    '粤');
                 $('#provienceBox').show();
                 $('#textBox').hide();
             }
