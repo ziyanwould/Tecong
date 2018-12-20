@@ -1,0 +1,51 @@
+html, body {
+  width: 100%;
+}
+
+.page {
+  width: 100%;
+}
+
+.nav {
+  height: 32px;
+  border-bottom: 1px solid #D1D1D1;
+  font-size: 14px;
+  line-height: 30px;
+  padding: 0 6.76329%;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.child {
+  height: 70px;
+  padding: 0 6.76329%;
+  display: flex;
+  justify-content: flex-start;
+}
+.child .left {
+  line-height: 70px;
+}
+.child .right {
+  margin-left: 3.38164%;
+  line-height: 70px;
+  border-bottom: 1px solid #D1D1D1;
+  flex: 1;
+  position: relative;
+}
+.child .right .weui-btn {
+  position: absolute;
+  right: 0;
+  top: 12px;
+  width: 114px;
+  height: 44px;
+  line-height: 44px;
+  background: #3578A4;
+}
+
+.lan {
+  background: #3578A4;
+  margin: 0 6.76329%;
+}
+
+.next {
+  margin-top: 50px;
+}

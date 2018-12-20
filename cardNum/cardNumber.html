@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0 ,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>输入车牌号</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="mui/css/mui1.css">
+
+</head>
+
+<body>
+    <div class="Num">
+        <div class="checked">
+           
+            <p>请核对车牌号</p>
+        </div>
+        <div class="car">请输入车牌号</div>
+          
+        <div class="cardNum2">
+            <a>
+                <input readonly="readonly" type="text" class="one" name="scs">
+            </a>
+            <a>
+                <input readonly="readonly" type="text" class="en" name="scs">
+            </a>
+            <a>
+                <input readonly="readonly" type="text" class="en" name="scs">
+            </a>
+            <a>
+                <input readonly="readonly" type="text" class="en" name="scs">
+            </a>
+            <a>
+                <input readonly="readonly" type="text" class="en" name="scs">
+            </a>
+            <a>
+                <input readonly="readonly" type="text" class="en" name="scs">
+            </a>
+            <a>
+                <input readonly="readonly" type="text" class="en" name="scs">
+            </a>
+
+            <a class="power" readonly="readonly">
+                <span class="sc " onclick="xs()">
+                    <span class="plus">
+                        <img src="imgs/addingvehicles_add@2x.png" alt="">
+                    </span>
+                    <span class="new">新能源</span>
+                </span>
+            </a>
+        </div>
+        <!-- 点击刷新 -->
+        <div class="refresh">
+            <a href="javascript:;"><img src="./imgs/shuaxin.png" id="img" alt=""></a>
+            <span>车牌有误、点击刷新</span>
+        </div>
+        <div class="next">下一步</div>
+      
+        
+        <!-- 汉字开始 -->
+        <div class="word">
+            <div class="word1">
+                <a class="a">京</a>
+                <a class="a">津</a>
+                <a class="a">冀</a>
+                <a class="a">晋</a>
+                <a class="a">蒙</a>
+                <a class="a">辽</a>
+                <a class="a">吉</a>
+                <a class="a">黑</a>
+                <a class="a">沪</a>
+
+            </div>
+            <div class="word1">
+                <a class="a">苏</a>
+                <a class="a">浙</a>
+                <a class="a">皖</a>
+                <a class="a">闽</a>
+                <a class="a">赣</a>
+                <a class="a">鲁</a>
+                <a class="a">豫</a>
+                <a class="a">鄂</a>
+                <a class="a">湘</a>
+
+            </div>
+            <div class="word1">
+                <a class="a">粤</a>
+                <a class="a">桂</a>
+                <a class="a">琼</a>
+                <a class="a">渝</a>
+                <a class="a">川</a>
+                <a class="a">贵</a>
+                <a class="a">云</a>
+                <a class="a">藏</a>
+                <a class="a">陕</a>
+
+            </div>
+            <div class="word1">
+                <a class="a">甘</a>
+                <a class="a">青</a>
+                <a class="a">宁</a>
+                <a class="a">新</a>
+                <a class="a">港</a>
+                <a class="a">澳</a>
+                <a class="a">台</a>
+                <a class="deleteBtn rm " >
+                    <img src="imgs/delete.png" alt="">
+                </a>
+            </div>
+        </div>
+        <!-- 汉字结束 -->
+
+        <!-- english 开始 -->
+        <div class="english " id="textBox" style="display:none;">
+            <div class="One">
+                <a class="b">1</a>
+                <a class="b">2</a>
+                <a class="b">3</a>
+                <a class="b">4</a>
+                <a class="b">5</a>
+                <a class="b">6</a>
+                <a class="b">7</a>
+                <a class="b">8</a>
+                <a class="b">9</a>
+                <a class="b">0</a>
+            </div>
+            <div class="One">
+                <a class="b">Q</a>
+                <a class="b">W</a>
+                <a class="b">E</a>
+                <a class="b">R</a>
+                <a class="b">T</a>
+                <a class="b">Y</a>
+                <a class="b">U</a>
+                <a class="b">I</a>
+                <a class="b">O</a>
+                <a class="b">P</a>
+            </div>
+            <div class="One">
+                <a class="b">A</a>
+                <a class="b">S</a>
+                <a class="b">D</a>
+                <a class="b">F</a>
+                <a class="b">G</a>
+                <a class="b">H</a>
+                <a class="b">J</a>
+                <a class="b">K</a>
+            </div>
+            <div class="One">
+                <a class="b">Z</a>
+                <a class="b">X</a>
+                <a class="b">C</a>
+                <a class="b">V</a>
+                <a class="b">B</a>
+                <a class="b">N</a>
+                <a class="b">M</a>
+                <a class="deleteBtn rm" >
+                    <img src="imgs/delete.png" alt="">
+                </a>
+            </div>
+        </div>
+        <!-- english 结束 -->
+
+
+    </div>
+    <script src="js/rem.js"></script>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+    // 点击刷新
+
+ var rotateNum = 360; //旋转角度
+$('.refresh').on('click',function(){
+	$('#img').css({
+		'transition': 'all 1s',
+    	'-webkit-transition': 'all 1s', /* Safari */
+		'transform':'rotate('+rotateNum+'deg)',
+		'-ms-transform':'rotate('+rotateNum+'deg)',
+		'-webkit-transform':'rotate('+rotateNum+'deg)'			
+	});
+	rotateNum=360+rotateNum;
+
+});
+
+
+
+
+
+    // 删除功能
+        var index = 0;
+        var ele;
+        var isDel = false;
+        var isInput = false;
+        input_len = $("input").length;
+      function xs() {
+            $(".sc").remove();
+            $("#textBox").css('display', 'block');
+            $(".power").append("<input type=\"text\" class=\"en\" name=\"scs\" readonly=\"readonly\">");
+            $(".power").trigger("create"); 
+            $(".power").children("input").css({"height":"0.38rem"});
+            // 使得当前input获取焦点，其他失去焦点
+            $(".power").find("input").focus();
+            $(".power").siblings("a").find("input").blur();
+            ele = $(".power").find("input");
+            isInput = true;
+            index = 8;
+            
+           
+        }; 
+
+
+        $(function () {
+            var $sel = "";
+            $('a').on('click', function () {
+                if ($(this).find('input').attr('class') == 'one') {
+                    $sel = $(this);
+
+                    $(".word").show();
+                    $(".english").hide();
+
+                    $(this).find('input').parent().focus().css({
+                        "border": "1px solid lightgreen"
+                    });
+                } else if ($(this).find('input').attr('class') == 'en') {
+                    $sel = $(this);
+                    $(".word").hide();
+                    $(".english").show();
+                }
+            });
+
+
+
+            $("a").on("click", function () {
+                
+                if ($(this).attr('class') == 'a' || $(this).attr('class') == 'b') {
+                    if (isInput == true) {
+                        InputNumber(ele, $(this));
+                        return;
+                    }
+                    $("input").eq(index).val($(this).text());
+                    index += 1;
+                    if (index >= $("input").length - 1) index = $("input").length - 1;
+                    $("input").eq(index).focus().parent().focus().css({
+                        "border": "1px solid lightgreen"
+                    });
+                    is_show();
+                }
+            });
+
+            //新能源
+            $(".deleteBtn").on('click', function () {
+                // 点击删除键删除当前input中的数字
+                if (isDel == true) {
+                    delNumber(ele);
+                    return;
+                }
+                // 常规删除事件
+                var num = true;
+                index = 0;
+                $('input').each(function (i, item) {
+             
+                    if ($(item).val() != '') {
+                        num = false;
+                        index ++;
+                    }
+                });
+                if (!num) index -= 1;
+                $("input").eq(index).val("").focus().parent().focus().css({
+                    "border": "1px solid #429AFA"
+                });
+                if (index <= 0) index = 0;
+                // 切换中英文键盘
+                is_show();
+                
+            })
+            //切换中英文键盘
+            function is_show() {
+                if (index != 0) {
+                    $(".word").hide();
+                    $(".english").show();
+                } else {
+                    $(".word").show();
+                    $(".english").hide();
+                }
+            }
+
+            // ------------------------------------------------------
+            // 点击input使得当前项获取焦点
+            $('.cardNum2 a').on("click", function () {  
+                // 改变输入或者删除的flag标识符
+                if ($(this).find("input").val() != '') {
+                    isInput = true;
+                    isDel = true;
+                }
+                // 获取当前选中的jQuery对象
+                ele = $(this);
+                // 使得当前项获取焦点
+                $(this).find("input").focus();
+                $(this).css({
+                    "border": "1px solid lightgreen"
+                }).siblings("a").each(function(i, item) {
+                    if ($(item).find("input").val() == "") {
+                        $(item).css({
+                            "border": "1px solid #429AFA"
+                        })
+                    }
+                })
+                
+            })
+        
+            // 删除函数定义
+            function delNumber(ele) {
+                ele.find("input").val("");
+                ele.find("input").focus();
+                ele.siblings("a").find("input").blur();
+                isDel = false;
+            }
+            // 输入函数定义
+            function InputNumber(ele, $this) {
+                ele.find("input").focus();
+                ele.find("input").val($this.text());
+                ele.siblings("a").find("input").blur();
+                isInput = false;
+            }
+     }); 
+
+
+
+
+    
+    </script>
+</body>
+
+</html>
