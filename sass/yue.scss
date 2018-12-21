@@ -1,0 +1,45 @@
+$Wipone6:414px;
+$Hipone6:700px;
+ul,li { list-style: none;}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+.page{
+    width: 100%;
+    height: 100%;
+  
+} 
+.count{
+    width: percentage((414px-40px-16px) / $Wipone6);
+    height: 128px;
+    background: #F0F0F0;
+    margin-top: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    padding-left: percentage(40px / $Wipone6);
+    padding-right: percentage(16px / $Wipone6)
+}
+.title{
+ font-size: 18px;
+}
+.detail{
+   font-size: 28px;
+   font-weight: 500; 
+}
+.right{
+   
+    width:  percentage(86px / $Wipone6);
+    background: #EC5A31;
+    border-radius: 5px;
+ a{ 
+     display: block;
+    width: 100%;
+     height: 40px;
+     text-align: center;
+     line-height: 40px;
+     color: #FFFFFF;
+     
+ }
+}

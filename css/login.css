@@ -85,3 +85,19 @@ html, body {
   padding: 5px;
   color: #429afa;
 }
+
+#carLicenseBox .submitBtn {
+  width: 86.47343%;
+  height: 45px;
+  background-color: #3578A4;
+  border: none;
+  border-radius: 6px;
+  text-align: center;
+  line-height: 45px;
+  color: white;
+  font-size: 20px;
+  margin: 0 10%;
+  position: absolute;
+  bottom: 20px;
+  margin: 0 6.76329%;
+}
